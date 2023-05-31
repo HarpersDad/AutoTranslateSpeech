@@ -1,15 +1,15 @@
 # imports
+import os
 import time
 import pyaudio
-import speech_recognition as sr
-from langdetect import detect
-from googletrans import Translator
 import tkinter
 from tkinter import *
 from tkinter import ttk
 from gtts import gTTS
+from langdetect import detect
+import speech_recognition as sr
 from playsound import playsound
-import os
+from googletrans import Translator
 
 # list for the drop down menus
 langList = ["English", "Spanish", "German", "Hindi", "French", "Japanese", "Russian", "Chinese"]
