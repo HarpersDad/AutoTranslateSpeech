@@ -1,10 +1,10 @@
 # imports
 import time
-import tkinter
 import pyaudio
 import speech_recognition as sr
 from langdetect import detect
 from googletrans import Translator
+import tkinter
 from tkinter import *
 from tkinter import ttk
 from gtts import gTTS
