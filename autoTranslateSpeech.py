@@ -199,7 +199,6 @@ def translateSpeech():
 button = tkinter.Button(root, command=translateSpeech, text="Translate", height=1)
 button.place(x=450, y=12)
 
-
 # creates the Swap Languages button
 button = tkinter.Button(root, command=switchLanguage, text="Swap Languages")
 button.place(x=450, y=57)
