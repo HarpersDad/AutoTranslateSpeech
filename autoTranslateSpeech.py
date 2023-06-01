@@ -1,6 +1,5 @@
 # imports
 import os
-import time
 import pyaudio
 import tkinter
 from tkinter import *
@@ -31,7 +30,7 @@ option_var2 = tkinter.StringVar(root)
 option_var2.set(langList[1])
 
 # create the combobox / drop down menu to translate from
-menu = ttk.Combobox(root, textvariable=option_var)
+menu = ttk.Combobox(root, textvariable=option_var, state="readonly")
 menu["values"] = langList
 menu.place(x=125, y=15)
 
@@ -40,7 +39,7 @@ label = tkinter.Label(root, text="Translate From: ")
 label.place(x=30,y=15)
 
 # create the combobox / drop down menu to translate to
-menu2 = ttk.Combobox(root, textvariable=option_var2)
+menu2 = ttk.Combobox(root, textvariable=option_var2, state="readonly")
 menu2["values"] = langList
 menu2.place(x=125, y=60)
 
