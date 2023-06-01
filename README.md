@@ -1,6 +1,6 @@
 # AutoTranslateSpeech
   <h3>autoTranslateSpeech.py</h3>
-    - This program takes input in the form of a drop down menu that selects a language to translate from and to.<br>
+    - This program uses a drop down menu that allows the user to select a language to translate from and to.<br>
     - The program then will listen for speech when the translate button is pressed.<br>
     - After the user is finished speaking the program will take the audio, translate it, then present it as text on screen.<br>
     - The program also "Speaks" back the translated phrase to the user(s).<br>
