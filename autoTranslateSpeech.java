@@ -109,8 +109,8 @@ public class app {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Implement the translation logic here
-            	textArea.append("To Language: " + comboBoxTo.getSelectedItem().toString() + "\n");
-            	textArea.append("From Language: " + comboBoxFrom.getSelectedItem().toString() + "\n");
+            	textArea.append("To Language: " + comboBoxTo.getSelectedItem().toString() + ", Language Code: " + setToLanguage() + "\n");
+            	textArea.append("From Language: " + comboBoxFrom.getSelectedItem().toString() + ", Language Code: " + setFromLanguage() + "\n");
             }
         });
         
@@ -139,7 +139,7 @@ public class app {
         comboBoxTo.setSelectedItem(tLanguage);
     }
     
-    public String setFromLanguage() {
+    public static String setFromLanguage() {
         String fromLanguage;
 
         switch (comboBoxFrom.getSelectedItem().toString()) {
@@ -174,7 +174,7 @@ public class app {
         return fromLanguage;
     }
     
-    public String setToLanguage() {
+    public static String setToLanguage() {
         String toLanguage;
 
         switch (comboBoxTo.getSelectedItem().toString()) {
