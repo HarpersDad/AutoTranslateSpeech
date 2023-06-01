@@ -15,3 +15,7 @@
 <h3>autoTranslateSpeech.java</h3>
   - WIP<br>
   - Not Finished<br>
+  - Initial UI complete<br>
+  - ComboBoxes set<br>
+  - Initial button functions set<br>
+  - I still need to implement the translation functions and language codes<br>
