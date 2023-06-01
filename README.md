@@ -11,3 +11,7 @@
     - This program may still have issues and is a work in progress.<br>
     - Working on adding an auto-detect function so that if the language is unknown it will still translate it for the user.<br>
     - I am also working on a Java version of this application as well.<br>
+
+<h3>autoTranslateSpeech.java</h3>
+  - WIP<br>
+  - Not Finished<br>
