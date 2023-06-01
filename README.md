@@ -19,3 +19,4 @@
   - ComboBoxes set<br>
   - Initial button functions set<br>
   - I still need to implement the translation functions and language codes<br>
+  - Code needs to be cleaned up as well<br>
