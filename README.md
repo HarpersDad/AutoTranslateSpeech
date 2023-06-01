@@ -18,5 +18,5 @@
   - Initial UI complete<br>
   - ComboBoxes set<br>
   - Initial button functions set<br>
-  - I still need to implement the translation functions and language codes<br>
+  - I still need to implement the translation functions<br>
   - Code needs to be cleaned up as well<br>
