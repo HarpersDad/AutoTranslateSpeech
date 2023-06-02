@@ -16,10 +16,33 @@ langList = ["English", "Spanish", "German", "Hindi", "French", "Japanese", "Russ
 # speech recognizer for capturing speech from microphone
 listener = sr.Recognizer()
 
+# UI Variables
+uiX = 655
+uiY = 495
+
+# ComboBox From
+cBoxL1X = 30
+cBox1X = 125
+cBox1Y = 15
+
+# ComboBox To
+cBoxL2X = 30
+cBox2X = 125
+cBox2Y = 60
+
+# Translation Text Box
+tBoxX = 5
+tBoxY = 100
+
+# Buttons
+bX = 450
+bY1 = 12
+bY2 = 57
+
 # sets up the window
 root = tkinter.Tk()
 root.title("Voice Translation")
-root.geometry("655x495")
+root.geometry(f"{uiX}x{uiY}")
 
 # drop down variable for language to translate from
 option_var = tkinter.StringVar(root)
@@ -32,24 +55,24 @@ option_var2.set(langList[1])
 # create the combobox / drop down menu to translate from
 menu = ttk.Combobox(root, textvariable=option_var, state="readonly")
 menu["values"] = langList
-menu.place(x=125, y=15)
+menu.place(x=cBox1X, y=cBox1Y)
 
 # label for from drop down
 label = tkinter.Label(root, text="Translate From: ")
-label.place(x=30,y=15)
+label.place(x=cBoxL1X,y=cBox1Y)
 
 # create the combobox / drop down menu to translate to
 menu2 = ttk.Combobox(root, textvariable=option_var2, state="readonly")
 menu2["values"] = langList
-menu2.place(x=125, y=60)
+menu2.place(x=cBox2X, y=cBox2Y)
 
 # label for to drop down
 label2 = tkinter.Label(root, text="Translate To: ")
-label2.place(x=30,y=60)
+label2.place(x=cBoxL1X,y=cBox2Y)
 
 # creates text box for output that is disabled
 textWin = tkinter.Text(root, wrap=tkinter.WORD, state="disabled")
-textWin.place(x=5, y=100)
+textWin.place(x=tBoxX, y=tBoxY)
 
 # function that shows the selected from-language in the text box, first by re-enabling the textbox, outputting the text, and re-disabling it
 def display_output(event):
@@ -196,11 +219,11 @@ def translateSpeech():
 
 # creates the Translate button
 button = tkinter.Button(root, command=translateSpeech, text="Translate", height=1)
-button.place(x=450, y=12)
+button.place(x=bX, y=bY1)
 
 # creates the Swap Languages button
 button = tkinter.Button(root, command=switchLanguage, text="Swap Languages")
-button.place(x=450, y=57)
+button.place(x=bX, y=bY2)
 
 # program loop
 root.mainloop()
