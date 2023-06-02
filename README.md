@@ -5,7 +5,7 @@
     - After the user is finished speaking the program will take the audio, translate it, then present it as text on screen.<br>
     - The program also "Speaks" back the translated phrase to the user(s).<br>
     <br>
-    - Supported Languages: English, Spanish, Hindi, French, German, Russian, Japanese, Chinese<br>
+    - Supported Languages: English, Spanish, Hindi, French, German, Russian, Japanese, Chinese, Tagalog, Vietnamese, Arabic, Korean<br>
     <br>
     - Microphone Needed!<br>
     - This program may still have issues and is a work in progress.<br>
