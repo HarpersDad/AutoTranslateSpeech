@@ -11,7 +11,7 @@ from playsound import playsound
 from googletrans import Translator
 
 # list for the drop down menus
-langList = ["English", "Spanish", "German", "Hindi", "French", "Japanese", "Russian", "Chinese"]
+langList = ["English", "Spanish", "German", "Hindi", "French", "Japanese", "Russian", "Chinese", "Tagalog", "Vietnamese", "Arabic", "Korean"]
 
 # speech recognizer for capturing speech from microphone
 listener = sr.Recognizer()
@@ -111,6 +111,14 @@ def setFromLanguage():
             fromLanguage = "zh-tw"
         case "Hindi":
             fromLanguage = "hi"
+        case "Arabic":
+            fromLanguage = "ar"
+        case "Korean":
+            fromLanguage = "ko"
+        case "Tagalog":
+            fromLanguage = "tl"
+        case "Vietnamese":
+            fromLanguage = "vi"
 
     #print(menu.get())
     #print(fromLanguage)
@@ -135,6 +143,14 @@ def setToLanguage():
             toLanguage = "zh-tw"
         case "Hindi":
             toLanguage = "hi"
+        case "Arabic":
+            toLanguage = "ar"
+        case "Korean":
+            toLanguage = "ko"
+        case "Tagalog":
+            toLanguage = "tl"
+        case "Vietnamese":
+            toLanguage = "vi"
 
     #print(menu2.get())
     #print(toLanguage)
