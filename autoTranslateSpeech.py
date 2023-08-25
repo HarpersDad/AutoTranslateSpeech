@@ -1,17 +1,15 @@
 # imports
 import os
-import pyaudio
 import tkinter
-from tkinter import *
 from tkinter import ttk
 from gtts import gTTS
-from langdetect import detect
 import speech_recognition as sr
 from playsound import playsound
 from googletrans import Translator
 
-# list for the drop down menus
-langList = ["English", "Spanish", "German", "Hindi", "French", "Japanese", "Russian", "Chinese", "Tagalog", "Vietnamese", "Arabic", "Korean"]
+# list for the drop-down menus
+langList = ["English", "Spanish", "German", "Hindi", "French", "Japanese",
+            "Russian", "Chinese", "Tagalog", "Vietnamese", "Arabic", "Korean"]
 
 # speech recognizer for capturing speech from microphone
 listener = sr.Recognizer()
@@ -59,7 +57,7 @@ menu.place(x=cBox1X, y=cBox1Y)
 
 # label for from drop down
 label = tkinter.Label(root, text="Translate From: ")
-label.place(x=cBoxL1X,y=cBox1Y)
+label.place(x=cBoxL1X, y=cBox1Y)
 
 # create the combobox / drop down menu to translate to
 menu2 = ttk.Combobox(root, textvariable=option_var2, state="readonly")
@@ -68,29 +66,35 @@ menu2.place(x=cBox2X, y=cBox2Y)
 
 # label for to drop down
 label2 = tkinter.Label(root, text="Translate To: ")
-label2.place(x=cBoxL1X,y=cBox2Y)
+label2.place(x=cBoxL1X, y=cBox2Y)
 
 # creates text box for output that is disabled
 textWin = tkinter.Text(root, wrap=tkinter.WORD, state="disabled")
 textWin.place(x=tBoxX, y=tBoxY)
 
-# function that shows the selected from-language in the text box, first by re-enabling the textbox, outputting the text, and re-disabling it
+
+# function that shows the selected from-language in the text box, first by re-enabling the textbox, outputting the
+# text, and re-disabling it
 def display_output(event):
     textWin.configure(state="normal")
     selected_option = option_var.get()
     textWin.insert(tkinter.END, f"Translate from: {selected_option}\n")
     textWin.configure(state="disabled")
 
-# function that shows the selected to-language in the text box, first by re-enabling the textbox, outputting the text, and re-disabling it
+
+# function that shows the selected to-language in the text box, first by re-enabling the textbox, outputting the
+# text, and re-disabling it
 def display_output2(event):
     textWin.configure(state="normal")
     selected_option2 = option_var2.get()
     textWin.insert(tkinter.END, f"Translate to: {selected_option2}\n")
     textWin.configure(state="disabled")
 
-# these two .bind lines show what language is selected for the drop down boxes and call the proper function
+
+# these two .bind lines show what language is selected for the drop-down boxes and call the proper function
 menu.bind("<<ComboboxSelected>>", display_output)
 menu2.bind("<<ComboboxSelected>>", display_output2)
+
 
 # match / switch statement that changes the language code for the from-language
 def setFromLanguage():
@@ -120,9 +124,10 @@ def setFromLanguage():
         case "Vietnamese":
             fromLanguage = "vi"
 
-    #print(menu.get())
-    #print(fromLanguage)
+    # print(menu.get())
+    # print(fromLanguage)
     return fromLanguage
+
 
 # match / switch statement that changes the language code for the to-language
 def setToLanguage():
@@ -152,9 +157,10 @@ def setToLanguage():
         case "Vietnamese":
             toLanguage = "vi"
 
-    #print(menu2.get())
-    #print(toLanguage)
+    # print(menu2.get())
+    # print(toLanguage)
     return toLanguage
+
 
 # this function allows for the user to switch the to and from languages with each other to facilitate a conversation
 def switchLanguage():
@@ -171,6 +177,7 @@ def switchLanguage():
     menu.set(fLanguage)
     menu2.set(tLanguage)
 
+
 # function call that translates the speech that is recorded by the microphone
 def translateSpeech():
     # sets languages
@@ -182,7 +189,7 @@ def translateSpeech():
         print("Now Listening.")
         audio = listener.listen(source)
 
-    # try / catch that attemps to recognize the speech and set it as text
+    # try / catch that attempts to recognize the speech and set it as text
     try:
         recordedSpeech = listener.recognize_google(audio)
 
@@ -208,7 +215,8 @@ def translateSpeech():
         # sets the translated speech as text
         outputText = translatedSpeech.text
 
-        # this block returns the text box to a writable state, then outputs the translated text, then disables the textbox again
+        # this block returns the text box to a writable state, then outputs the translated text, then disables the
+        # textbox again
         textWin.configure(state="normal")
         textWin.insert(tkinter.END, "Translated text: " + outputText + "\n")
         textWin.configure(state="disabled")
@@ -220,7 +228,7 @@ def translateSpeech():
         if os.path.exists("audio.mp3"):
             os.remove("audio.mp3")
 
-        # saves the translated audio as an mp3 file
+        # saves the translated audio as a mp3 file
         tts.save("audio.mp3")
 
         # plays the translated audio using the OS's default mp3 player
@@ -228,12 +236,13 @@ def translateSpeech():
 
     # else
     else:
-        # writes to the textbox that no speech was captured, and to try again.  <-- this probably doesn't work as intended
+        # writes to the textbox that no speech was captured, and to try again. <- this probably doesn't work as intended
         textWin.configure(state="normal")
         textWin.insert(tkinter.END, "Speech could not be captured. Please try again." + "\n")
         textWin.configure(state="disabled")
 
-# creates the Translate button
+
+# creates the translation button
 button = tkinter.Button(root, command=translateSpeech, text="Translate", height=1)
 button.place(x=bX, y=bY1)
 
